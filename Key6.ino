@@ -1,31 +1,39 @@
 /*
-  KeyboardAndMouseControl
- 
 
-  The mouse movement is always relative. This sketch reads four pushbuttons, and
-  uses them to set the movement of the mouse.
+  El movimiento del mouse siempre es relativo, no olviden eso, ademas los pasos depende de la resolución a la que
+  tengan configurado su mouse en el sistema perativo.
+
+  Cuando es programa esté completado si quieren usar la configuración de teclaod en español se debe usar la libreria
+  "Keyboard_ES"
 
   WARNING: When you use the Mouse.move() command, the Arduino takes over your
   mouse! Make sure you have control before you use the mouse commands.
 
- Programa modificado por Rafael Zapata
-  Comandos
-  Mouse.begin()
-Mouse.click()
-Mouse.end()
-Mouse.move()
-Mouse.press()
-Mouse.release()
-Mouse.isPressed()
+ Programa para usar un teclado de 2 filas por 3 columnas, en total 6 teclas,
+ Con este programa se recrea el funcionamiento de un teclaod normal, pero bajando mucho la complejidad.
+ 
+ Programa realizado por : Rafael Zapata Grau
+ e-mail: razapata@gmail.com
 
-Keyboard.begin()
-Keyboard.end()
-Keyboard.press()
-Keyboard.print()
-Keyboard.println()
-Keyboard.release()
-Keyboard.releaseAll()
-Keyboard.write()
+ 
+  Comandos del mouse:
+  Mouse.begin()
+  Mouse.click()
+  Mouse.end()
+  Mouse.move()
+  Mouse.press()
+  Mouse.release()
+  Mouse.isPressed()
+
+  Comandos del teclado:
+  Keyboard.begin()
+  Keyboard.end()
+  Keyboard.press()
+  Keyboard.print()
+  Keyboard.println()
+  Keyboard.release()
+  Keyboard.releaseAll()
+  Keyboard.write()
  
 */
 
