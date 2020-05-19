@@ -49,7 +49,7 @@ const int ColsCounter = 3;
 /*  Información para hacer tarea periodica */
 unsigned long startMillis;  //Variable Global
 unsigned long currentMillis;
-const unsigned long periodo = 150;  //Peridodo de ejecución en milisegundos
+const unsigned long periodo = 125;  //Peridodo de ejecución en milisegundos
 
 int thisPin;
 int i;
@@ -89,7 +89,7 @@ void loop() {
       for(i = 0; i < RowsCounter; i++)
       {
           digitalWrite(Rows[i],LOW);
-          delay(10);
+          delay(5);
       } 
       if ( (currentMillis - startMillis >= periodo) || (currentMillis - startMillis < 0) )
       {
@@ -97,7 +97,7 @@ void loop() {
           for(i = 0; i < RowsCounter; i++)
           {
               digitalWrite(Rows[i],HIGH);
-              delay(20);
+              delay(10);
               for(j = 0; j < ColsCounter; j++ )
               {
                   if( digitalRead(Cols[j])== HIGH )
@@ -130,24 +130,17 @@ void loop() {
                               boton6();
                               break;   
                         }
-                     } 
-                     
+                     }
                   }
-                  delay(20); // delay por seguridad
-              }
-                
+                  digitalWrite(Rows[i],LOW);
+                  delay(10); // delay por seguridad
+             }
           }
-
-          
-          
           startMillis = currentMillis;  // condición para evaluar el siguiente vez
           //Se enciende Led para verificar que se ejecutó por lo menos una vez el código
           //digitalWrite(13, HIGH);
           delay(1);
       }
-     
-      
-  
 }
 
 
