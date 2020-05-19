@@ -49,7 +49,7 @@ const int ColsCounter = 3;
 /*  Información para hacer tarea periodica */
 unsigned long startMillis;  //Variable Global
 unsigned long currentMillis;
-const unsigned long periodo = 125;  //Peridodo de ejecución en milisegundos
+const unsigned long periodo = 150;  //Peridodo de ejecución en milisegundos
 
 int thisPin;
 int i;
@@ -89,7 +89,7 @@ void loop() {
       for(i = 0; i < RowsCounter; i++)
       {
           digitalWrite(Rows[i],LOW);
-          delay(5);
+          delay(20);
       } 
       if ( (currentMillis - startMillis >= periodo) || (currentMillis - startMillis < 0) )
       {
@@ -97,7 +97,7 @@ void loop() {
           for(i = 0; i < RowsCounter; i++)
           {
               digitalWrite(Rows[i],HIGH);
-              delay(10);
+              delay(20);
               for(j = 0; j < ColsCounter; j++ )
               {
                   if( digitalRead(Cols[j])== HIGH )
@@ -146,26 +146,15 @@ void loop() {
 
 void boton1()
 {
-    Keyboard.begin();
-    delay(500);
-    Mouse.begin();
-    delay(500);
-    delay(100);
-    digitalWrite(13, HIGH);
+    Keyboard.println("Test Boton 1. Sí presiono Enter. ññ");
+    delay(50);
 }
 
 
 void boton2()
 {
-    Keyboard.releaseAll();
+    Keyboard.println("Test Boton 1. Sí presiono Enter. ññ");
     delay(50);
-    Keyboard.end();
-    delay(50);
-    Mouse.release();
-    delay(50);
-    Mouse.end();
-    delay(100);
-    digitalWrite(13, LOW);
 }
 
 void boton3()
@@ -221,35 +210,8 @@ void boton6()
       delay(1000);
       Mouse.move(5000, 0);
       delay(1000);
-      Mouse.move(500, 0);
+      Mouse.move(10000, 0);
+      delay(1000);
+      Mouse.move(20000, 0);
+      delay(1000);
 }
-
-
-/* // programar para verificar que se está enviando al computador
-  if (Serial.available() > 0) {
-    char inChar = Serial.read();
-
-    switch (inChar) {
-      case 'u':
-        // move mouse up
-        Mouse.move(0, -40);
-        break;
-      case 'd':
-        // move mouse down
-        Mouse.move(0, 40);
-        break;
-      case 'l':
-        // move mouse left
-        Mouse.move(-40, 0);
-        break;
-      case 'r':
-        // move mouse right
-        Mouse.move(40, 0);
-        break;
-      case 'm':
-        // perform mouse left click
-        Mouse.click(MOUSE_LEFT);
-        break;
-    }
-  } 
-  */
