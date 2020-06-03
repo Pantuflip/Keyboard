@@ -1,1 +1,1 @@
-## Programa para probar que las teclas del nuevo teclado están enviando los datos correctamente. Esta aplicación solo funciona en windows, pero se puede buscar en internet otra aplicación de este mismo tipo para tu distribuación de sistema operativo.
+## Programa para probar que las teclas del nuevo teclado están enviando los datos correctamente. Esta aplicación solo funciona en windows, pero se puede buscar en internet otra aplicación de este mismo tipo para tu distribución de sistema operativo.
